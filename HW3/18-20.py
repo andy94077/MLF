@@ -5,7 +5,12 @@ from utility import *
 
 def theta(s):
 	'''@retrun: double'''
-	return 1 / (1 + exp(-s))
+	if s < -20:
+		return 0
+	else if s > 20:
+		return 1
+	else:
+		return 1 / (1 + exp(-s))
 
 def dE_norm(w, data, y):
 	'''@return: normalized dE ndarray'''
