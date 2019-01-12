@@ -15,8 +15,6 @@ def read_data(filename):
 
 def err_num(b,b_hat,N):
 	'''@return: the num of error that b[i] != b_hat[i]'''
-	#b = getattr(b, 'A1', b)  #convert matrix b(if b is a matrix) into ndarray
-	#b_hat=getattr(b_hat,'A1',b_hat)
 	b = np.array(b).flat
 	b_hat=np.array(b_hat).flat
 	return sum([ b[i]!=sign(b_hat[i]) for i in range(N)])
