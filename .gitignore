@@ -1,3 +1,9 @@
+# user defined
+*.docx
+*.jpg
+*.jpeg
+*.png
+
 # for vscode
 .vscode/*
 !.vscode/settings.json
