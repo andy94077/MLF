@@ -1,7 +1,5 @@
 '''np.sign(x), f(x1,x2), read_data(filename), err_rate(b,b_hat,N)'''
 import numpy as np
-def np.sign(x):
-	return (-1,1)[x>0]
 def f(x1,x2):
 	return np.sign(x1 ** 2 + x2 ** 2 - 0.6)
 

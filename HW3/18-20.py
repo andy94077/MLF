@@ -1,6 +1,5 @@
 import numpy as np
 from math import exp
-from random import sample
 from utility import *
 
 def theta(s):
