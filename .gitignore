@@ -3,6 +3,7 @@
 *.jpg
 *.jpeg
 *.png
+*.zip
 
 # for vscode
 .vscode/*
