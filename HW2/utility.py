@@ -1,7 +1,5 @@
 '''np.sign(x), h(s, x, theta), read_data(filename), test(data, y, s, theta)'''
 import numpy as np
-def np.sign(x):
-	return (-1,1)[x>0]
 def h(s, x, theta):
 	return s * np.sign(x - theta)
 

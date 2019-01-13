@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-from random import uniform, shuffle, random
+from random import uniform, random
 import matplotlib.pyplot as plt
 import numpy as np
-def np.sign(x):
-	return 1 if x > 0 else -1
 def h(s, x, theta):
 	return s * np.sign(x - theta)
 def test(data, y, s, theta):
