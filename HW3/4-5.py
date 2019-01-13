@@ -20,7 +20,7 @@ def err_rate(w, data, y):
 	return np.sum(np.sign(data.dot(w))!=y)/data.shape[0] #sum([np.sign(w.dot(line[0]))!=line[1] for line in zip(data,y)])/data.shape[0]
 
 def PLA(data, y, test, eta, sgd=False, update_time=2000):
-	'''@return: int, int. Ein, E_out'''
+	'''@return: array, array. Ein, E_out'''
 	w = np.zeros((data.shape[1],1))
 	ein_list = np.empty(update_time)
 	eout_list = np.empty(update_time)
@@ -49,7 +49,7 @@ plt.xlabel('t')
 plt.plot(range(update_time), GD001[0],label='GD')
 plt.plot(range(update_time), SGD0001[1], label='SGD')
 plt.legend()
-#plt.show()
+plt.show()
 
 plt.title('Eout')
 plt.ylabel('Eout(w_t)')
@@ -57,5 +57,5 @@ plt.xlabel('t')
 plt.plot(range(update_time), GD001[0],label='GD')
 plt.plot(range(update_time), SGD0001[1], label='SGD')
 plt.legend()
-#plt.show()
+plt.show()
 

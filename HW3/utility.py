@@ -5,10 +5,7 @@ def f(x1,x2):
 
 def read_data(filename):
 	'''@return: data array. Therefore data[i,:-1] is the line data, and data[i,-1] is the result y'''
-	data = []
-	with open(filename,'r') as f:
-		data = [list(map(float, line.split())) for line in f]
-	return np.array(data)
+	return np.loadtxt(filename)
 
 
 def err_num(b,b_hat,N):
