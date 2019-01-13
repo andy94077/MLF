@@ -17,10 +17,6 @@ def load_data(file_path):
 	return X, Y
 
 
-def np.sign(x):
-	if x > 0:
-		return 1
-	return -1
 
 def test(X, Y, w) :
 	n = len(Y)

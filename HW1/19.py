@@ -1,5 +1,5 @@
-from utility import *
 from random import random, randint, seed
+from utility import *
 train, test =read_data('hw1_18_train.dat'), read_data('hw1_18_test.dat')
 def test_err(w, test_data):
 	err = 0

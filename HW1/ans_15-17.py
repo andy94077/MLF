@@ -15,10 +15,6 @@ def load_data() :
     Y = mm[:,-1]
     return X, Y
     
-def np.sign(x) :
-    if x > 0 :
-        return 1.
-    return -1.
 
 def train(X, Y, rand = False, alpha = 1) :
     col = len(X[0])
