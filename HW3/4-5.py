@@ -17,7 +17,7 @@ def dE_norm(w, data, y,n):
 	return dE.reshape(-1,1)
 
 def err_rate(w, data, y):
-	return np.sum(np.sign(data.dot(w))!=y)/data.shape[0] #sum([np.sign(w.dot(line[0]))!=line[1] for line in zip(data,y)])/data.shape[0]
+	return np.sum(np.sign(data.dot(w))!=y)/data.shape[0] 
 
 def PLA(data, y, test, eta, sgd=False, update_time=2000):
 	'''@return: array, array. Ein, E_out'''
