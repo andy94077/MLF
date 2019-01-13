@@ -1,6 +1,6 @@
-'''sign(n), read_data(filename)'''
+'''np.sign(n), read_data(filename)'''
 import numpy as np
-def sign(n):
+def np.sign(n):
 	return 1 if n > 0 else - 1
 
 def read_data(filename):

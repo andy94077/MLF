@@ -4,7 +4,7 @@ train, test =read_data('hw1_18_train.dat'), read_data('hw1_18_test.dat')
 def test_err(w, test_data):
 	err = 0
 	for v in test_data:
-		if sign(w.dot(v[0])) != v[1]:
+		if np.sign(w.dot(v[0])) != v[1]:
 			err+=1
 	return err
 
@@ -20,7 +20,7 @@ for _ in range(test_time):
 		i = randint(0, train.shape[0] - 1)
 		if t == 49:
 			w50 = w.copy()
-		if sign(w.dot(train[i][0])) != train[i][1]:
+		if np.sign(w.dot(train[i][0])) != train[i][1]:
 			new_w = w + train[i][1] * train[i][0]
 			if t == 49:
 				w50 = new_w.copy()

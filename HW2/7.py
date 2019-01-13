@@ -2,17 +2,17 @@
 from random import uniform, shuffle, random
 import matplotlib.pyplot as plt
 import numpy as np
-def sign(x):
+def np.sign(x):
 	return 1 if x > 0 else -1
 def h(s, x, theta):
-	return s * sign(x - theta)
+	return s * np.sign(x - theta)
 def test(data, y, s, theta):
 	'''return: the number of errors that h(s,data[i],theta) != y[i]'''
 	return sum(1 if h(s,x,theta)!=y[i] else 0 for i,x in enumerate(data))
 
 def error(N):
 	D = [uniform(-1, 1) for _ in range(N)]
-	y = [sign(i) if random()>0.8 else -sign(i) for i in D]
+	y = [np.sign(i) if random()>0.8 else -np.sign(i) for i in D]
 
 	#add a virtual head data and virtual tail data to D for the purpose of choosing mean easily
 	D.insert(0, D[0] - 1)

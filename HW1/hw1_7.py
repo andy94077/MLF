@@ -15,7 +15,7 @@ for t in range(test_time):
 	while not all_pass:
 		all_pass=True
 		for i in sample(range(len(data)),len(data)):
-			if sign(w.dot(data[i][0])) != data[i][1]:
+			if np.sign(w.dot(data[i][0])) != data[i][1]:
 				w += data[i][1] * data[i][0]
 				all_pass = False
 				update_n += 1

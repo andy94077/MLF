@@ -27,7 +27,7 @@ def PLA(data, y, test, eta, sgd=False, update_time=2000):
 	w = np.zeros(data.shape[1])
 	for _ in range(update_time):
 		w -= eta * dE_norm(w, data, y,sgd)
-	return sum([sign(w.dot(line[:-1]))!=line[-1] for line in test])
+	return sum([np.sign(w.dot(line[:-1]))!=line[-1] for line in test])
 
 
 train, test = read_data('hw3_train.dat'), read_data('hw3_test.dat')

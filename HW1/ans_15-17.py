@@ -15,7 +15,7 @@ def load_data() :
     Y = mm[:,-1]
     return X, Y
     
-def sign(x) :
+def np.sign(x) :
     if x > 0 :
         return 1.
     return -1.
@@ -32,7 +32,7 @@ def train(X, Y, rand = False, alpha = 1) :
     update = False
     while True :
         i = idx[k]
-        if sign(np.dot(X[i], w)) != Y[i] :
+        if np.sign(np.dot(X[i], w)) != Y[i] :
             ans += 1
             w = w + alpha * Y[i] * X[i, :]
             update = True

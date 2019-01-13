@@ -4,7 +4,7 @@ from random import random, seed, choice, sample
 def test_err(w, test_data):
 	err = 0
 	for v in test_data:
-		if sign(w.dot(v[0])) != v[1]:
+		if np.sign(w.dot(v[0])) != v[1]:
 			err+=1
 	return err
 
@@ -21,7 +21,7 @@ def PLA(train, test, update_time=50, pocket=True):
 		for t in range(update_time):
 			for i in sample(range(len(train)),len(train)):
 				v, y=train[i][0],train[i][1]
-				if sign(new_w.dot(v)) != y:
+				if np.sign(new_w.dot(v)) != y:
 					new_w += y * v
 					if not pocket and t == update_time - 1:
 						w = new_w.copy()

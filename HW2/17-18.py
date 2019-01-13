@@ -2,7 +2,7 @@ from random import uniform, shuffle, random
 from utility import *
 def error(N):
 	D = [uniform(-1, 1) for _ in range(N)]
-	y = [sign(x) if random()>0.8 else -sign(x) for i, x in enumerate(D)]
+	y = [np.sign(x) if random()>0.8 else -np.sign(x) for i, x in enumerate(D)]
 
 	D.insert(0, D[0] - 1)
 	D.append(D[-1] + 1)

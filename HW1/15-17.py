@@ -15,7 +15,7 @@ if israndom:
 		while not all_pass:
 			all_pass=True
 			for i in sample(range(len(data)),len(data)):
-				if sign(w.dot(data[i][0])) != data[i][1]:
+				if np.sign(w.dot(data[i][0])) != data[i][1]:
 					w += alpha*data[i][1] * data[i][0]
 					all_pass = False
 					update_n += 1
@@ -24,7 +24,7 @@ else:
 	while not all_pass:
 		all_pass=True
 		for v in data:
-			if sign(w.dot(v[0])) != v[1]:
+			if np.sign(w.dot(v[0])) != v[1]:
 				w += v[1] * v[0]
 				all_pass = False
 				update_n+=1

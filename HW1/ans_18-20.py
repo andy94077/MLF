@@ -17,14 +17,14 @@ def load_data(file_path):
 	return X, Y
 
 
-def sign(x):
+def np.sign(x):
 	if x > 0:
 		return 1
 	return -1
 
 def test(X, Y, w) :
 	n = len(Y)
-	ne = sum([1 for i in range(n) if sign(np.dot(X[i], w)) != Y[i]])
+	ne = sum([1 for i in range(n) if np.sign(np.dot(X[i], w)) != Y[i]])
 	return ne# / float(n)
 
 def train(X, Y, updates = 50, pocket = True) :
@@ -37,7 +37,7 @@ def train(X, Y, updates = 50, pocket = True) :
 	for k in range(updates) :
 		idx = random.sample(range(n), n)
 		for i in idx :
-			if sign(np.dot(X[i], w)) != Y[i] :
+			if np.sign(np.dot(X[i], w)) != Y[i] :
 				w = w + Y[i] * X[i]
 				e = test(X, Y, w)
 				#print(w,error)
