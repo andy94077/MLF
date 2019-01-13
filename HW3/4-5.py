@@ -2,7 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 def read_data(filename):
 	'''@return: data array. Therefore data[i,:-1] is the line data, and data[i,-1] is the result y'''
-	return np.loadtxt(filename)
+	data=np.loadtxt(filename)
+	return np.concatenate((np.zeros((data.shape[0], 1)), data), axis=1)
 
 def theta(s):
 	'''@retrun: double'''
