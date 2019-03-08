@@ -35,6 +35,16 @@ def PLA(data, y, test, eta, sgd=False, update_time=2000):
 		eout_list[t]=err_rate(w,test[:,:-1], test[:, -1:])
 	return ein_list, eout_list
 
+def draw(title=None, xlabel=None, ylabel=None):
+	if title is not None:
+		plt.title(title)
+	if xlabel is not None:
+		plt.xlabel(xlabel)
+	if ylabel is not None:
+		plt.ylabel(ylabel)
+	plt.legend()
+	plt.show()
+
 
 update_time=2000
 train, test = read_data('hw3_train.dat'), read_data('hw3_test.dat')
@@ -44,19 +54,24 @@ SGD0001 = PLA(train[:,:-1], train[:, -1:], test, 0.001, True)
 print('GD, eta:0.01, Ein: {}, Eout: {}'.format(GD001[0][-1], GD001[1][-1]))
 print('SGD, eta:0.001, Ein: {}, Eout: {}'.format(SGD0001[0][-1], SGD0001[1][-1]))
 
-plt.title('Ein')
-plt.ylabel('Ein(w_t)')
-plt.xlabel('t')
 plt.plot(range(update_time), GD001[0],label='GD')
-plt.plot(range(update_time), SGD0001[1], label='SGD')
-plt.legend()
-plt.show()
+plt.plot(range(update_time), SGD0001[0], label='SGD')
+draw('Ein', 't', 'Ein(w_t)')
 
-plt.title('Eout')
-plt.ylabel('Eout(w_t)')
-plt.xlabel('t')
-plt.plot(range(update_time), GD001[0],label='GD')
+plt.plot(range(update_time), GD001[1],label='GD')
 plt.plot(range(update_time), SGD0001[1], label='SGD')
-plt.legend()
-plt.show()
+draw('Eout', 't', 'Eout(w_t)')
 
+update_time=10000
+GD0001 = PLA(train[:,:-1], train[:, -1:], test, 0.001, False, update_time)
+SGD0001 = PLA(train[:,:-1], train[:, -1:], test, 0.001, True, update_time)
+print('GD, eta:0.001, time: 10000, Ein: {}, Eout: {}'.format(GD0001[0][-1], GD001[1][-1]))
+print('SGD, eta:0.001, time: 10000, Ein: {}, Eout: {}'.format(SGD0001[0][-1], SGD0001[1][-1]))
+
+plt.plot(range(update_time), GD0001[0],label='GD')
+plt.plot(range(update_time), SGD0001[0], label='SGD')
+draw('Ein', 't', 'Ein(w_t)')
+
+plt.plot(range(update_time), GD0001[1],label='GD')
+plt.plot(range(update_time), SGD0001[1], label='SGD')
+draw('Eout', 't', 'Eout(w_t)')
