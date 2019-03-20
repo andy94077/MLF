@@ -14,7 +14,7 @@ def dE_norm(w, data, y,n):
 	if n >= 0:
 		dE = theta(-y[n,0] * data[n].dot(w)) * (-y[n,0] * data[n])
 	else:
-		dE = np.sum(theta(-y * (data.dot(w))) * (-y * data) / data.shape[0], axis=0)
+		dE = np.sum(theta(-y * (data.dot(w))) * (-y * data), axis=0) / data.shape[0]
 	return dE.reshape(-1,1)
 
 def err_rate(w, data, y):
